@@ -4,12 +4,13 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name="BUCKETS")
+@Table(name = "BUCKETS")
 public class Bucket {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
+    @OneToOne(mappedBy = "bucket")
     private User user;
 
     @OneToMany(mappedBy="bucket")

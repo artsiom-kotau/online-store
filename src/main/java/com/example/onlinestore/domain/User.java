@@ -3,7 +3,7 @@ package com.example.onlinestore.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name="USERS")
+@Table(name = "USERS")
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -12,6 +12,8 @@ public class User {
     @OneToOne(mappedBy = "user")
     private Profile profile;
 
+    @OneToOne
+    @JoinColumn(name = "bucket_id")
     private Bucket bucket;
 
     public User() {

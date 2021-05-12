@@ -3,13 +3,17 @@ package com.example.onlinestore.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name="CATEGORIES")
+@Table(name = "CATEGORIES")
 public class Category {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name="good_id", nullable=false)
+    private Good good;
 
     public Category() {
     }
