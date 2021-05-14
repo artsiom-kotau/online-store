@@ -13,8 +13,8 @@ public class User {
     private Profile profile;
 
     @OneToOne
-    @JoinColumn(name = "bucket_id")
     private Bucket bucket;
+
 
     public User() {
     }

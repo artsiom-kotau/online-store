@@ -11,8 +11,9 @@ public class PaymentMethod {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name="profile_id", nullable=false)
     private Profile profile;
+
+    private String name;
 
     public PaymentMethod() {
     }

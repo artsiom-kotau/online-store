@@ -15,11 +15,9 @@ public class BucketGood {
     private BigDecimal price;
 
     @ManyToOne
-    @JoinColumn(name="bucket_id", nullable=false)
     private Bucket bucket;
 
     @ManyToOne
-    @JoinColumn(name="good_id", nullable=false)
     private Good good;
 
     public BucketGood() {

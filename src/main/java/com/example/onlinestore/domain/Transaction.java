@@ -16,11 +16,9 @@ public class Transaction {
     private BigDecimal price;
 
     @ManyToOne
-    @JoinColumn(name="good_id", nullable=false)
     private Good good;
 
     @ManyToOne
-    @JoinColumn(name="paymentMethod_id", nullable=false)
     private PaymentMethod paymentMethod;
 
     public Transaction() {

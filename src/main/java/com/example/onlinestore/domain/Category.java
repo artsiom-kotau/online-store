@@ -12,7 +12,6 @@ public class Category {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name="good_id", nullable=false)
     private Good good;
 
     public Category() {
