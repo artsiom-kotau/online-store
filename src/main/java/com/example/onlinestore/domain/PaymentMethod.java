@@ -13,7 +13,7 @@ public class PaymentMethod {
     @ManyToOne
     private Profile profile;
 
-    private String name;
+    private String nameOfMethod;
 
     public PaymentMethod() {
     }
@@ -32,5 +32,13 @@ public class PaymentMethod {
 
     public void setProfile(Profile profile) {
         this.profile = profile;
+    }
+
+    public String getNameOfMethod() {
+        return nameOfMethod;
+    }
+
+    public void setNameOfMethod(String nameOfMethod) {
+        this.nameOfMethod = nameOfMethod;
     }
 }

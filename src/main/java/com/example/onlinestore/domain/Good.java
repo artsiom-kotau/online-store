@@ -1,7 +1,6 @@
 package com.example.onlinestore.domain;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "GOODS")
@@ -14,8 +13,9 @@ public class Good {
 
     private String country;
 
-    @OneToMany(mappedBy="good")
-    private Set<Category> categories;
+    @ManyToOne
+    @JoinColumn(name="category_id", nullable=false)
+    private Category category;
 
     public Good() {
     }
@@ -44,11 +44,12 @@ public class Good {
         this.country = country;
     }
 
-    public Set<Category> getCategories() {
-        return categories;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCategories(Set<Category> categories) {
-        this.categories = categories;
+    public void setCategory(Category category) {
+        this.category = category;
     }
+
 }

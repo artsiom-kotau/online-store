@@ -3,6 +3,7 @@ package com.example.onlinestore.domain;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "TRANSACTIONS")
@@ -20,6 +21,9 @@ public class Transaction {
 
     @ManyToOne
     private PaymentMethod paymentMethod;
+
+    @OneToMany(mappedBy = "transaction")
+    private Set<BucketGood> bucketGoods;
 
     public Transaction() {
     }
@@ -48,13 +52,6 @@ public class Transaction {
         this.price = price;
     }
 
-    public Good getGood() {
-        return good;
-    }
-
-    public void setGood(Good good) {
-        this.good = good;
-    }
 
     public PaymentMethod getPaymentMethod() {
         return paymentMethod;
@@ -62,5 +59,13 @@ public class Transaction {
 
     public void setPaymentMethod(PaymentMethod paymentMethod) {
         this.paymentMethod = paymentMethod;
+    }
+
+    public Set<BucketGood> getBucketGoods() {
+        return bucketGoods;
+    }
+
+    public void setBucketGoods(Set<BucketGood> bucketGoods) {
+        this.bucketGoods = bucketGoods;
     }
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet author="admin" id="1543412736052-9">
+        <addForeignKeyConstraint baseColumnNames="bucket_id" baseTableName="bucket_goods"
+                                 constraintName="bucket_goods_bucket_id_fk" deferrable="false"
+                                 initiallyDeferred="false" onDelete="CASCADE" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="buckets"/>
+        <addForeignKeyConstraint baseColumnNames="good_id" baseTableName="bucket_goods"
+                                 constraintName="bucket_goods_good_id_fk" deferrable="false"
+                                 initiallyDeferred="false" onDelete="CASCADE" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="goods"/>
+        <addForeignKeyConstraint baseColumnNames="transaction_id" baseTableName="bucket_goods"
+                                 constraintName="bucket_goods_transaction_id_fk" deferrable="false"
+                                 initiallyDeferred="false" onDelete="CASCADE" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="transactions"/>
+    </changeSet>
+</databaseChangeLog>

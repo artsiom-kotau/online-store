@@ -1,6 +1,7 @@
 package com.example.onlinestore.domain;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "CATEGORIES")
@@ -31,5 +32,13 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Good> getGoods() {
+        return goods;
+    }
+
+    public void setGoods(Set<Good> goods) {
+        this.goods = goods;
     }
 }

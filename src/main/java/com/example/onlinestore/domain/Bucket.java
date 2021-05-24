@@ -10,7 +10,8 @@ public class Bucket {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
-    @OneToOne(mappedBy = "bucket")
+    @OneToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     @OneToMany(mappedBy="bucket")

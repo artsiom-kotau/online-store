@@ -20,6 +20,10 @@ public class BucketGood {
     @ManyToOne
     private Good good;
 
+    @ManyToOne
+    @JoinColumn(name="transaction_id", nullable=false)
+    private Transaction transaction;
+
     public BucketGood() {
     }
 
@@ -61,5 +65,13 @@ public class BucketGood {
 
     public void setGood(Good good) {
         this.good = good;
+    }
+
+    public Transaction getTransaction() {
+        return transaction;
+    }
+
+    public void setTransaction(Transaction transaction) {
+        this.transaction = transaction;
     }
 }

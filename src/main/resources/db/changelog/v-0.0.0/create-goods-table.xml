@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet author="admin" id="1543412736052-4">
+        <createTable tableName="goods">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="goods_pkey"/>
+            </column>
+            <column name="country" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="category_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="admin" id="1543412736052-15">
+        <loadData
+                file="classpath:data/goods.csv"
+                separator=","
+                tableName="goods">
+            <column name="country" type="STRING"/>
+            <column name="name" type="STRING"/>
+            <column name="category_id" type="NUMERIC"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

@@ -7,14 +7,18 @@ import java.util.Set;
 @Table(name = "PROFILES")
 public class Profile {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @OneToOne(cascade = CascadeType.ALL)
     private User user;
 
-    @OneToMany(mappedBy="profile")
-    private Set<PaymentMethod> paymentsMathods;
+    @OneToMany(mappedBy = "profile")
+    private Set<PaymentMethod> paymentsMethods;
+
+    private String firstName;
+
+    private String lastName;
 
     public Profile() {
     }
@@ -35,11 +39,29 @@ public class Profile {
         this.user = user;
     }
 
-    public Set<PaymentMethod> getPaymentsMathods() {
-        return paymentsMathods;
+    public Set<PaymentMethod> getPaymentsMethods() {
+        return paymentsMethods;
     }
 
-    public void setPaymentsMathods(Set<PaymentMethod> paymentsMathods) {
-        this.paymentsMathods = paymentsMathods;
+    public void setPaymentsMethods(Set<PaymentMethod> paymentsMethods) {
+        this.paymentsMethods = paymentsMethods;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+
 }
