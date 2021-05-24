@@ -4,7 +4,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-    <changeSet author="admin" id="1543412736052-5">
+    <changeSet author="admin" id="1543412736052-15">
         <createTable tableName="payment_methods">
             <column autoIncrement="true" name="id" type="BIGSERIAL">
                 <constraints primaryKey="true" primaryKeyName="payment_methods_pkey"/>
@@ -15,7 +15,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="admin" id="1543412736052-18">
+    <changeSet author="admin" id="1543412736052-16">
         <loadData
                 file="classpath:data/paymentMethods.csv"
                 separator=","
