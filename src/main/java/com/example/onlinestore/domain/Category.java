@@ -34,11 +34,4 @@ public class Category {
         this.name = name;
     }
 
-    public Set<Good> getGoods() {
-        return goods;
-    }
-
-    public void setGoods(Set<Good> goods) {
-        this.goods = goods;
-    }
 }
