@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet author="admin" id="1543412736052-1">
+        <createTable tableName="bucket_goods">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="bucket_goods_pkey"/>
+            </column>
+            <column name="number_of_goods" type="INTEGER"/>
+            <column name="price" type="numeric(19,2)"/>
+            <column name="bucket_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="good_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="admin" id="1543412736052-2">
+        <loadData
+                file="classpath:data/bucketGoods.csv"
+                separator=","
+                tableName="bucket_goods">
+            <column name="number_of_goods" type="NUMERIC"/>
+            <column name="price" type="NUMERIC"/>
+            <column name="bucket_id" type="NUMERIC"/>
+            <column name="good_id" type="NUMERIC"/>
+            <column name="transaction_id" type="NUMERIC"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>
